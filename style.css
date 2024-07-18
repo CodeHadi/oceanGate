@@ -1,0 +1,63 @@
+.nav-link{
+    transition: all 0.3s;
+}
+.nav-link:hover{
+    border-bottom: 4px solid rgb(18, 196, 18);    
+}
+
+.c-item{
+    height: 680px;
+}
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+    background-position: center;
+    background-size: cover;
+}
+.btn-light{
+    background-color: rgb(8, 224, 62);
+    border-style: none;
+    color: black;
+}
+.lusi{
+    font-size: 20px;
+    color:rgb(119, 119, 119) ;
+    font-weight: 500;
+}
+.lusi-1{
+    font-size: 30px;
+    color:white ;
+    font-weight: 500;
+    padding: 3rem;
+    font-weight: 700;
+}
+.yoyo{
+    color: white;
+    font-weight: 900;
+    padding: 1rem;
+    font-size: 42px;
+}
+.project{
+    background-color: black;
+}
+.card-img-top{
+    padding: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card:hover{
+    background-color: rgb(8, 224, 62);
+    color: black;
+    transition: .5s;
+}
+.card{
+    background-color: rgb(19, 18, 18);
+    color: white;
+    height: 600px;
+    padding: 1rem;
+    width: 100%;
+}
+.home:hover{
+    background-color: #ff0000;
+}
