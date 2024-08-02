@@ -60,21 +60,18 @@ background-color:   rgb(255, 255, 255);
 background-color: #02bf1b;
 color:  antiquewhite;
 width: 100%;
-padding: 3px;
+padding: 5px;
 margin: 10px 0;
 border-radius: 2px solid white;
 cursor: pointer;
 text-align: center;
 position: center;
-font-size: large;
 }
 #btn:hover{
     color: #fff;
 }
 label{
    color: #fff ;
-   font-size: x-large;
-   padding: 0.5rem;
 }
 i{
     color: #ffffff;
@@ -86,6 +83,9 @@ i{
     function validation () {
     var user=document.getElementById("user").value;
     var pass=document.getElementById("pass").value;
+    var conPass=document.getElementById("conPass").value;
+    var phone=document.getElementById("phone").value;
+    var email=document.getElementById("email").value;
 
     // username
     if(user==""){
@@ -111,7 +111,38 @@ i{
         document.getElementById("password") .innerHTML="***password limit 20 character";
         return false;
     }
+    // retype password
+    if(conPass==""){
+        document.getElementById("conpassword") .innerHTML="***please fill password";
+        return false;}
+
+     if(pass!=conPass){
+         document.getElementById("conpassword") .innerHTML="***password must be same";
+         return false;
+        }
+    //phone No
+    if(phone==""){
+        document.getElementById("phoneno") .innerHTML="***please fill phone NO";
+        return false;
+    }
     
+    if(phone.length!=11){
+        document.getElementById("phoneno") .innerHTML="***phone no must be 11 digits ";
+        return false;
+    }
+    if(isNaN(phone)){
+        document.getElementById("phoneno") .innerHTML="***phone no contain only digits";
+        return false;
+    }
+    // email
+    if(email==""){
+        document.getElementById("emailAdd") .innerHTML="***pleaase fill email";
+        return false;
+    }
+    if((email.charAt(email.length-4)!=".") && (email.charAt(email.length-3)!=".")){
+        document.getElementById("emailAdd") .innerHTML="***invalid email";
+        return false; 
+    }
 }
 
 </script>
@@ -119,7 +150,7 @@ i{
     <div class="container">
         <form action="#" onsubmit="return validation()">
             <!-- username -->
-           <h1><b>Login Here:</b></h1>
+           <h1><b>Sign Up Here:</b></h1>
             <div class="input_group">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <label for=""><b>Username:</b></label>
@@ -133,6 +164,46 @@ i{
                 <label for=""><b>Password:</b></label>
                 <input type="password" id="pass" placeholder="password" autocomplete="off">
                  <span id="password" style="color: red;"></span>
+            </div>
+
+            <!-- re-type password -->
+            <div class="input_group"> 
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <label for=""><b>Re-type password:</b></label>
+                <input type="password" id="conPass" placeholder="re-type password" autocomplete="off">
+                 <span id="conpassword" style="color: red;"></span>
+            </div>
+
+            <!-- phone no-->
+            <div class="input_group">
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+                <label for=""><b>Phone No:</b></label>
+                <input type="tel" id="phone" placeholder="phone no" autocomplete="off">
+                 <span id="phoneno" style="color: red;"></span>
+            </div>
+
+            <!-- E-mail -->
+            <div class="input_group">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <label for=""><b>E-mail:</b></label>
+                <input type="email" id="email" placeholder="email" autocomplete="off">
+                 <span id="emailAdd" style="color: red;"></span>
+             </div>
+
+              <!-- date/time/year -->
+            <div class="input_group">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <label for=""><b>Date of birth:</b></label>
+                <input type="date" id="date of birth">
+            </div>
+
+             <!-- Gender -->
+            <div class="input_group">
+                <i class="fa fa-male" aria-hidden="true">      <b>/</b></i>   
+                <i class="fa fa-female" aria-hidden="true"></i>
+                <label for="group" ><b>Gender:</label><br>
+                <input type="radio" name="Gender" value="male">male <br>
+                <input type="radio" name="Gender" value="female">female
             </div>
 
             <!-- button -->
